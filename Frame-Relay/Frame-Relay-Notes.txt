@@ -1,0 +1,23 @@
+FRAME RELAY
+1. set ip of router fa and se of devices
+
+2. use syntax of router-to-router
+- int <se2/0>	> exit int of current router
+- encapsulation frame-relay
+- bandwidth 64000
+- exit
+
+* repeat to all destinations *
+
+3. router rip
+
+4. set dlci of router to router
+
+5. set dlci on se cloud
+
+6. frame relay on cloud 
+(connect to sides; connect accross)
+
+
+X not needed on (2) - frame-relay map ip 
+<14.0.0.1> <604> broadcast	> ip of target router towards cloud

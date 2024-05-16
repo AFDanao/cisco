@@ -1,0 +1,33 @@
+ip dhcp pool <Name>
+network <ip> <subnet mask>
+default-router <network>
+
+license boot module c1900 technology-package securityk9
+exit
+copy run start
+reload
+
+hostname R1
+
+access-list 100 permit ip <host> <destination>
+
+crypto isakmp policy 10
+encryption aes 256
+authentication pre-share
+group 5
+
+crypto isakmp key <Key> address <address>
+
+crypto ipsec transform-set <source>-<destination> esp-aes 256 esp-sha-hmac
+
+crypto map IPSEC-CRYPTOMAP <access-list num> ipsec-isakmp
+set peer <address>
+set pfs group5
+set security-association lifetime seconds 86400
+set transform-set <source>-<destination>
+match address <access-list num>
+
+int <port>
+crypto map IPSEC-CRYPTOMAP
+
+QA_Back/DevOps
