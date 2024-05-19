@@ -1,0 +1,39 @@
+1.ip address all interfaces
+2. routes - rip
+3.
+ip dhcp pool p1
+network 10.0.0.0 255.0.0.0
+default-router 10.0.0.1
+option 150 ip 10.0.0.1
+exit
+
+4.
+int range fa0/1-5
+switchport mode access
+switchport voice vlan1
+exit
+
+5.
+telephony-service
+max-ephones 3
+max-dn 3
+ip source-address 10.0.0.1 port 2000
+auto assign 4 to 6
+auto assign 1 to 5
+exit
+
+6.
+ephone-dn 1
+name 3001
+ephone-dn 2
+name 3002
+
+7. 
+voice routing
+
+dial-peer voice 1 voip
+destination-pattern 1...
+session target ipv4:10.0.0.1
+exit
+
+
