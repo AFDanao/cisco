@@ -15,10 +15,10 @@ exit
 
 5.
 telephony-service
-max-ephones 11
-max-dn 11
-ip source-address 21.0.0.1 port 2000
-auto assign 1 to 11
+max-ephones 24
+max-dn 24
+ip source-address 16.0.0.1 port 2000
+auto assign 1 to 24
 exit
 
 6.
@@ -30,9 +30,9 @@ number 3002
 7. 
 voice routing
 
-dial-peer voice 3 voip
-destination-pattern 4...
-session target ipv4:22.0.0.1
+dial-peer voice 2 voip
+destination-pattern 3...
+session target ipv4:16.0.0.1
 exit
 
 
