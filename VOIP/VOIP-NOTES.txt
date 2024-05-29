@@ -1,10 +1,10 @@
 1.ip address all interfaces
 2. routes - rip
 3.
-ip dhcp pool R2
-network 15.0.0.0 255.0.0.0
-default-router 15.0.0.1
-option 150 ip 15.0.0.1
+ip dhcp pool R4
+network 17.0.0.0 255.0.0.0
+default-router 17.0.0.1
+option 150 ip 17.0.0.1
 exit
 
 4.
@@ -17,7 +17,7 @@ exit
 telephony-service
 max-ephones 24
 max-dn 24
-ip source-address 16.0.0.1 port 2000
+ip source-address 17.0.0.1 port 2000
 auto assign 1 to 24
 exit
 
@@ -30,57 +30,57 @@ number 3002
 7. 
 voice routing
 
-dial-peer voice 2 voip
+dial-peer voice 3 voip
 destination-pattern 3...
 session target ipv4:16.0.0.1
 exit
 
 
 ephone-dn 1
-number 3001
+number 4001
 ephone-dn 2
-number 3002
+number 4002
 ephone-dn 3
-number 3003
+number 4003
 ephone-dn 4
-number 3004
+number 4004
 ephone-dn 5
-number 3005
+number 4005
 ephone-dn 6
-number 3006
+number 4006
 ephone-dn 7
-number 3007
+number 4007
 ephone-dn 8
-number 3008
+number 4008
 ephone-dn 9
-number 3009
+number 4009
 ephone-dn 10
-number 3010
+number 4010
 ephone-dn 11
-number 3011
+number 4011
 ephone-dn 12
-number 2012
+number 4012
 ephone-dn 13
-number 2013
+number 4013
 ephone-dn 14
-number 2014
+number 4014
 ephone-dn 15
-number 2015
+number 4015
 ephone-dn 16
-number 2016
+number 4016
 ephone-dn 17
-number 2017
+number 4017
 ephone-dn 18
-number 2018
+number 4018
 ephone-dn 19
-number 2019
+number 4019
 ephone-dn 20
-number 2020
+number 4020
 ephone-dn 21
-number 2021
+number 4021
 ephone-dn 22
-number 2022
+number 4022
 ephone-dn 23
-number 2023
+number 4023
 ephone-dn 24
-number 2024
+number 4024
